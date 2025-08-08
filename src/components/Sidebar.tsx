@@ -8,7 +8,8 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange }) => {
   const menuItems = [
-    { id: 'transcript', label: 'Live Transcript', icon: Mic },
+    { id: 'transcript', label: 'Process (Manual)', icon: Mic },
+    { id: 'live', label: 'Live Stream', icon: Mic },
     { id: 'memories', label: 'Memories', icon: BookOpen },
     { id: 'hotphrases', label: 'Hot Phrases', icon: Settings },
     { id: 'search', label: 'Search', icon: Search },

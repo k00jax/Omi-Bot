@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { TranscriptView } from './components/TranscriptView';
+import { TranscriptLiveView } from './components/TranscriptLiveView';
 import { MemoriesView } from './components/MemoriesView';
 import { HotPhrasesView } from './components/HotPhrasesView';
 import { SearchView } from './components/SearchView';
@@ -43,6 +44,8 @@ function App() {
     switch (activeView) {
       case 'transcript':
         return <TranscriptView onMemoryCreated={handleMemoryCreated} />;
+      case 'live':
+        return <TranscriptLiveView onMemoryCreated={() => handleMemoryCreated()} />;
       case 'memories':
         return <MemoriesView refreshTrigger={refreshTrigger} />;
       case 'hotphrases':

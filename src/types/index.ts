@@ -5,6 +5,8 @@ export interface Memory {
   tags: string[];
   type: 'note' | 'research' | 'reminder' | 'general';
   hotPhrase?: string;
+  // Indicates memory was produced by the real-time live stream pipeline
+  liveSource?: boolean;
 }
 
 export interface HotPhrase {
@@ -21,6 +23,8 @@ export interface TranscriptEntry {
   timestamp: string;
   processed: boolean;
   matchedPhrases: string[];
+  // For live stream entries that are raw/unprocessed
+  live?: boolean;
 }
 
 export interface AppStats {
